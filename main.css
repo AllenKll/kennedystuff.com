@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+	margin: 0px;
+	overflow-y: scroll; 
+}
+
+iframe {
+	border-style: none;
+	width: calc(100vw - (100vw - 100%));
+	margin: 0,0,0,0;
+}
+
+#header-frame{
+	height:110px;
+}
+
+#footer-frame{
+	display:none;
+}
+
+.navigation{
+    border: 10px solid transparent;
+    padding: 15px;
+    border-image: url(images/crayon_border.png) 8% round;
+    margin: 2vw;
+}
+
+.navigation > ul {
+    display: flex;
+    align-items: stretch; /* Default */
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: wrap;
+}
+.navigation > ul > li {
+    display: block;
+    flex: 0 1 auto;  Default 
+    list-style-type: none;
+    text-align: center;
+	width: 250px; /* same as li img below to get text on next line */
+}
+
+.navigation > ul > li img{
+	width: 250px;
+	height: 250px;
+}
+
+.navigation > ul > li a {
+	width: 100%; 
+}
+
+#video-navigation li {
+	width: 960;
+}
+
+#page-picture{
+	width: calc(96vw - (100vw - 100%));
+	margin-left:2vw;
+	height:300px;
+}
+#page-picture img{
+	width:100%;
+	height:100%;
+}
