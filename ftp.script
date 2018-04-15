@@ -1,0 +1,37 @@
+#!/bin/bash
+HOST='ftp.kennedystuff.com'
+
+# read in the username and passowrd
+read -p "Username for ${HOST}: " USER
+read -sp "Password for ${USER}@${HOST}: " PASSWD
+
+# get a list of all files except for the hidden ones (.xxxx)
+FILES=`find * -type f`
+
+#get a list of directories
+DIRECTORIES=`find * -type d | sort`
+
+{
+    echo quote USER $USER
+    echo quote PASS $PASSWD
+    echo passive
+    echo binary
+    echo cd /www
+
+    for DIR in $DIRECTORIES; do
+    	echo mkdir $DIR
+    done
+
+    for FILE in $FILES; do
+		echo put $FILE
+    done
+    echo hash
+    echo bye
+} | ftp -vn $HOST
+
+#ftp -i -n $HOST <<END_SCRIPT
+#cd www
+#mput *
+#quit
+#END_SCRIPT
+#exit 0
