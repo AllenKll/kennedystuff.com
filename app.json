@@ -1,0 +1,14 @@
+{
+  "name": "Deploy_KennedyStuff.com",
+  "description": "Deploys the git repo of kennedystuff.com to production",
+  "website": "https://kennedystuff.com/",
+  "repository": "https://github.com/allenkll/kennedystuff.com",
+  "scripts": {
+    "release": "echo RELEASED!!!!x"
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
